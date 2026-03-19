@@ -20,16 +20,19 @@ If you do not want to trust the automated shell scripts, or if a script fails in
 | --- | --- |
 | Notion MCP server | https://developers.notion.com/guides/mcp/get-started-with-mcp |
 
-## 📦 Copy Skills To Another Environment
+## 🚀 Getting Started
 
-For a remote environment, SSH into the target machine first and run the same commands there.
+This repository is not loaded directly by the AI agents.
+Clone the repository first, then copy the skill directories under `skills/` into the agent-specific skill path.
+
+For a remote machine, SSH into the target host first and run the same commands there.
 
 ### Codex
 
 ```bash
 git clone https://github.com/skier-song9/song9-skills.git
 mkdir -p ~/.codex/skills
-cp -R song9-skills/skills/notion-mcp-page-authoring ~/.codex/skills/
+cp -R song9-skills/skills/* ~/.codex/skills/
 ./song9-skills/setup_codex.sh
 ```
 
@@ -38,7 +41,7 @@ cp -R song9-skills/skills/notion-mcp-page-authoring ~/.codex/skills/
 ```bash
 git clone https://github.com/skier-song9/song9-skills.git
 mkdir -p ~/.claude/skills
-cp -R song9-skills/skills/notion-mcp-page-authoring ~/.claude/skills/
+cp -R song9-skills/skills/* ~/.claude/skills/
 ./song9-skills/setup_claude_code.sh
 ```
 
@@ -48,11 +51,11 @@ cp -R song9-skills/skills/notion-mcp-page-authoring ~/.claude/skills/
 git clone https://github.com/skier-song9/song9-skills.git
 mkdir -p ~/.gemini/extensions/song9-skills/skills
 cp song9-skills/gemini-extension.json ~/.gemini/extensions/song9-skills/
-cp -R song9-skills/skills/notion-mcp-page-authoring ~/.gemini/extensions/song9-skills/skills/
+cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 ./song9-skills/setup_gemini.sh
 ```
 
-Replace `notion-mcp-page-authoring` with any other skill directory under `skills/` if you want a different skill. If the CLI is already open, restart it after copying the files.
+If you only want a subset, copy only the directories you need from `skills/` instead of `skills/*`. If the CLI is already open, restart it after copying the files.
 
 ## 🧩 Skills
 

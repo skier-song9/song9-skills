@@ -20,7 +20,10 @@
 | --- | --- |
 | Notion MCP server | https://developers.notion.com/guides/mcp/get-started-with-mcp |
 
-## 📦 다른 환경으로 스킬 복사하기
+## 🚀 설치 방법
+
+이 저장소를 agent가 직접 읽어서 바로 스킬로 사용하는 것은 아닙니다.
+먼저 저장소를 clone한 뒤, `skills/` 아래의 스킬 디렉터리들을 각 agent가 읽는 스킬 경로로 복사해야 합니다.
 
 원격 환경에 설치할 때는 먼저 대상 서버에 SSH로 접속한 뒤, 같은 명령을 그 환경에서 실행하면 됩니다.
 
@@ -29,7 +32,7 @@
 ```bash
 git clone https://github.com/skier-song9/song9-skills.git
 mkdir -p ~/.codex/skills
-cp -R song9-skills/skills/notion-mcp-page-authoring ~/.codex/skills/
+cp -R song9-skills/skills/* ~/.codex/skills/
 ./song9-skills/setup_codex.sh
 ```
 
@@ -38,7 +41,7 @@ cp -R song9-skills/skills/notion-mcp-page-authoring ~/.codex/skills/
 ```bash
 git clone https://github.com/skier-song9/song9-skills.git
 mkdir -p ~/.claude/skills
-cp -R song9-skills/skills/notion-mcp-page-authoring ~/.claude/skills/
+cp -R song9-skills/skills/* ~/.claude/skills/
 ./song9-skills/setup_claude_code.sh
 ```
 
@@ -48,11 +51,11 @@ cp -R song9-skills/skills/notion-mcp-page-authoring ~/.claude/skills/
 git clone https://github.com/skier-song9/song9-skills.git
 mkdir -p ~/.gemini/extensions/song9-skills/skills
 cp song9-skills/gemini-extension.json ~/.gemini/extensions/song9-skills/
-cp -R song9-skills/skills/notion-mcp-page-authoring ~/.gemini/extensions/song9-skills/skills/
+cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 ./song9-skills/setup_gemini.sh
 ```
 
-다른 스킬을 설치하려면 `notion-mcp-page-authoring` 대신 `skills/` 아래의 다른 디렉터리 이름으로 바꿔서 복사하면 됩니다. CLI가 이미 실행 중이면 파일 복사 후 다시 시작하세요.
+모든 스킬이 아니라 일부만 설치하고 싶다면 `skills/*` 대신 필요한 디렉터리만 골라서 복사하면 됩니다. CLI가 이미 실행 중이면 파일 복사 후 다시 시작하세요.
 
 ## 🧩 Skills
 
