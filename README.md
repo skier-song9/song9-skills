@@ -1,10 +1,10 @@
 **English** | [한국어](./README.ko.md)
 
-# song9-skills
+# 🛠️ song9-skills
 
 A small collection of skills I personally find useful.
 
-## Preliminaries
+## ⚙️ Preliminaries
 
 These skills require MCP servers and a few local settings before use.
 
@@ -13,7 +13,7 @@ Run the setup script that matches your AI agent:
 - Codex: `./setup_codex.sh`
 - Claude Code: `./setup_claude_code.sh`
 
-## Skills
+## 🧩 Skills
 
 | Skill | Purpose | `short_description` |
 | --- | --- | --- |

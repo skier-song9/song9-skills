@@ -1,10 +1,10 @@
 [English](./README.md) | **한국어**
 
-# song9-skills
+# 🛠️ song9-skills
 
 개인적으로 유용하게 사용하는 스킬 모음입니다.
 
-## Preliminaries
+## ⚙️ Preliminaries
 
 이 스킬들을 사용하려면 MCP 서버와 기타 로컬 설정이 먼저 필요합니다.
 
@@ -13,7 +13,7 @@
 - Codex: `./setup_codex.sh`
 - Claude Code: `./setup_claude_code.sh`
 
-## Skills
+## 🧩 Skills
 
 | 스킬 | 목적 | `short_description` |
 | --- | --- | --- |
