@@ -1,0 +1,18 @@
+.DS_Store
+
+# Editor settings
+.idea/
+.vscode/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build and temp artifacts
+build/
+dist/
+tmp/
+*.log

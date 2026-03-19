@@ -1,0 +1,4 @@
+interface:
+  display_name: "Notion Page Authoring"
+  short_description: "Create and update Notion pages with rules"
+  default_prompt: "Use $notion-mcp-page-authoring to create or update a Notion page with my workspace rules."

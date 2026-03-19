@@ -1,0 +1,4 @@
+interface:
+  display_name: "Notion Paper Authoring"
+  short_description: "Write arXiv paper notes into a Notion page"
+  default_prompt: "Use $notion-paper-page-authoring to read an arXiv paper and fill my existing Notion page."
