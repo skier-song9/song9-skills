@@ -57,9 +57,37 @@ cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 
 모든 스킬이 아니라 일부만 설치하고 싶다면 `skills/*` 대신 필요한 디렉터리만 골라서 복사하면 됩니다. CLI가 이미 실행 중이면 파일 복사 후 다시 시작하세요.
 
+## 🎯 Codex 기준 기본값
+
+이 저장소는 Codex, Claude Code, Gemini CLI를 모두 지원하지만, `skills/` 아래 스킬들은 기본적으로 Codex를 기준으로 작성하고 관리합니다. 별도 안내가 없는 한 예시, 프롬프트 문구, 워크플로 전제는 Codex 우선으로 생각하면 됩니다.
+
 ## 🧩 Skills
 
 | 스킬 | 목적 | `short_description` |
 | --- | --- | --- |
 | `notion-mcp-page-authoring` | 워크스페이스별 페이지 규칙과 포맷을 지키면서 Notion 페이지를 생성하고 수정합니다. | `Create and update Notion pages with rules` |
 | `notion-paper-page-authoring` | 기존 페이지 구조와 워크스페이스 규칙을 유지하면서 arXiv 논문 내용을 Notion 페이지에 정리합니다. | `Write arXiv paper notes into a Notion page` |
+| `prd` | 구현을 시작하지 않고 새로운 기능용 PRD를 작성합니다. | `Generate a Product Requirements Document (PRD) for a new feature.` |
+| `ralph` | 기존 PRD를 Ralph 실행용 `scripts/ralph/prd.json` 형식으로 변환합니다. | `Convert PRDs to prd.json format for the Ralph autonomous agent system.` |
+
+## 🤖 Ralph
+
+이 저장소에는 Codex 사용을 기준으로 조정한 Ralph agentic loop 설정도 `scripts/ralph/` 아래에 포함되어 있습니다.
+
+- 원본 저장소: https://github.com/snarktank/ralph.git
+- Codex tool이 추가된 기반 fork: https://github.com/bsgustavo/ralph_protocol.git
+- 이 저장소에는 그 fork 위에 소규모 권한 관련 수정이 추가로 반영되어 있습니다.
+
+기본 Codex 실행:
+
+```bash
+./scripts/ralph/ralph.sh --tool codex [max_iterations]
+```
+
+기본값으로 이 래퍼는 Codex를 `--dangerously-bypass-approvals-and-sandbox` 옵션으로 실행합니다. 샌드박스 안에서 더 안전한 Codex 경로를 쓰고 싶다면 `RALPH_CODEX_SAFE_MODE=1`을 지정해 `--full-auto`로 되돌려 실행하면 됩니다.
+
+```bash
+RALPH_CODEX_SAFE_MODE=1 ./scripts/ralph/ralph.sh --tool codex [max_iterations]
+```
+
+Ralph의 자세한 워크플로, 규칙, 사용 메모는 다음 Notion 페이지를 참고하세요: https://skier-song9.notion.site/Ralph-333c8d3f60f580ec9098cb284f3cf096?source=copy_link
