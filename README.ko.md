@@ -109,4 +109,4 @@ cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 RALPH_CODEX_SAFE_MODE=1 ./scripts/ralph/ralph.sh --tool codex [max_iterations]
 ```
 
-Ralph의 자세한 워크플로, 규칙, 사용 메모는 다음 Notion 페이지를 참고하세요: [notion/Ralph](https://skier-song9.notion.site/Ralph-333c8d3f60f580ec9098cb284f3cf096?source=copy_link)
+Ralph의 자세한 워크플로, 규칙, 사용 메모는 다음 Notion 페이지를 참고하세요: [notion/Ralph](https://skier-song9.notion.site/Ralph-333c8d3f60f580ec9098cb284f3cf096?source=copy_link) ⭐
