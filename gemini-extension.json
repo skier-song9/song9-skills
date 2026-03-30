@@ -1,5 +1,5 @@
 {
-  "name": "song9-skills",
+  "name": "agent-workflow-skills",
   "version": "0.1.0",
-  "description": "Personal Notion authoring skills for Gemini CLI."
+  "description": "Workflow and authoring skills for Gemini CLI."
 }
