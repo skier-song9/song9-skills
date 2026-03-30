@@ -4,6 +4,18 @@
 
 A small collection of skills I personally find useful.
 
+## 📚 Table of Contents
+
+- [⚙️ Preliminaries](#preliminaries)
+- [🚀 Getting Started](#getting-started)
+- [💻 Codex Setup](#codex)
+- [🧠 Claude Code Setup](#claude-code)
+- [✨ Gemini CLI Setup](#gemini-cli)
+- [🎯 Codex-first defaults](#codex-first-defaults)
+- [🧩 Skills](#skills)
+- [🤖 Ralph](#ralph)
+
+<a id="preliminaries"></a>
 ## ⚙️ Preliminaries
 
 These skills require MCP servers and a few local settings before use.
@@ -20,6 +32,7 @@ If you do not want to trust the automated shell scripts, or if a script fails in
 | --- | --- |
 | Notion MCP server | https://developers.notion.com/guides/mcp/get-started-with-mcp |
 
+<a id="getting-started"></a>
 ## 🚀 Getting Started
 
 This repository is not loaded directly by the AI agents.
@@ -27,6 +40,7 @@ Clone the repository first, then copy the skill directories under `skills/` into
 
 For a remote machine, SSH into the target host first and run the same commands there.
 
+<a id="codex"></a>
 ### Codex
 
 ```bash
@@ -36,6 +50,7 @@ cp -R song9-skills/skills/* ~/.codex/skills/
 ./song9-skills/setup_codex.sh
 ```
 
+<a id="claude-code"></a>
 ### Claude Code
 
 ```bash
@@ -45,6 +60,7 @@ cp -R song9-skills/skills/* ~/.claude/skills/
 ./song9-skills/setup_claude_code.sh
 ```
 
+<a id="gemini-cli"></a>
 ### Gemini CLI
 
 ```bash
@@ -57,10 +73,12 @@ cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 
 If you only want a subset, copy only the directories you need from `skills/` instead of `skills/*`. If the CLI is already open, restart it after copying the files.
 
+<a id="codex-first-defaults"></a>
 ## 🎯 Codex-first defaults
 
 This repository supports Codex, Claude Code, and Gemini CLI, but the skills in `skills/` are written and maintained with Codex as the default target. Unless a skill explicitly says otherwise, the examples, prompt wording, and workflow assumptions in this repo are Codex-first.
 
+<a id="skills"></a>
 ## 🧩 Skills
 
 | Skill | Purpose | `short_description` |
@@ -70,6 +88,7 @@ This repository supports Codex, Claude Code, and Gemini CLI, but the skills in `
 | `prd` | Generate a Product Requirements Document for a feature without starting implementation. | `Generate a Product Requirements Document (PRD) for a new feature.` |
 | `ralph` | Convert an existing PRD into `scripts/ralph/prd.json` format for Ralph autonomous runs. | `Convert PRDs to prd.json format for the Ralph autonomous agent system.` |
 
+<a id="ralph"></a>
 ## 🤖 Ralph
 
 This repo also includes a Ralph agentic loop setup under `scripts/ralph/`, adapted for Codex usage.

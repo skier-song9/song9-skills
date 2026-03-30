@@ -4,6 +4,18 @@
 
 개인적으로 유용하게 사용하는 스킬 모음입니다.
 
+## 📚 목차
+
+- [⚙️ Preliminaries](#preliminaries)
+- [🚀 설치 방법](#getting-started)
+- [💻 Codex 설치](#codex)
+- [🧠 Claude Code 설치](#claude-code)
+- [✨ Gemini CLI 설치](#gemini-cli)
+- [🎯 Codex 기준 기본값](#codex-first-defaults)
+- [🧩 Skills](#skills)
+- [🤖 Ralph](#ralph)
+
+<a id="preliminaries"></a>
 ## ⚙️ Preliminaries
 
 이 스킬들을 사용하려면 MCP 서버와 기타 로컬 설정이 먼저 필요합니다.
@@ -20,6 +32,7 @@
 | --- | --- |
 | Notion MCP server | https://developers.notion.com/guides/mcp/get-started-with-mcp |
 
+<a id="getting-started"></a>
 ## 🚀 설치 방법
 
 이 저장소를 agent가 직접 읽어서 바로 스킬로 사용하는 것은 아닙니다.
@@ -27,6 +40,7 @@
 
 원격 환경에 설치할 때는 먼저 대상 서버에 SSH로 접속한 뒤, 같은 명령을 그 환경에서 실행하면 됩니다.
 
+<a id="codex"></a>
 ### Codex
 
 ```bash
@@ -36,6 +50,7 @@ cp -R song9-skills/skills/* ~/.codex/skills/
 ./song9-skills/setup_codex.sh
 ```
 
+<a id="claude-code"></a>
 ### Claude Code
 
 ```bash
@@ -45,6 +60,7 @@ cp -R song9-skills/skills/* ~/.claude/skills/
 ./song9-skills/setup_claude_code.sh
 ```
 
+<a id="gemini-cli"></a>
 ### Gemini CLI
 
 ```bash
@@ -57,10 +73,12 @@ cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 
 모든 스킬이 아니라 일부만 설치하고 싶다면 `skills/*` 대신 필요한 디렉터리만 골라서 복사하면 됩니다. CLI가 이미 실행 중이면 파일 복사 후 다시 시작하세요.
 
+<a id="codex-first-defaults"></a>
 ## 🎯 Codex 기준 기본값
 
 이 저장소는 Codex, Claude Code, Gemini CLI를 모두 지원하지만, `skills/` 아래 스킬들은 기본적으로 Codex를 기준으로 작성하고 관리합니다. 별도 안내가 없는 한 예시, 프롬프트 문구, 워크플로 전제는 Codex 우선으로 생각하면 됩니다.
 
+<a id="skills"></a>
 ## 🧩 Skills
 
 | 스킬 | 목적 | `short_description` |
@@ -70,6 +88,7 @@ cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 | `prd` | 구현을 시작하지 않고 새로운 기능용 PRD를 작성합니다. | `Generate a Product Requirements Document (PRD) for a new feature.` |
 | `ralph` | 기존 PRD를 Ralph 실행용 `scripts/ralph/prd.json` 형식으로 변환합니다. | `Convert PRDs to prd.json format for the Ralph autonomous agent system.` |
 
+<a id="ralph"></a>
 ## 🤖 Ralph
 
 이 저장소에는 Codex 사용을 기준으로 조정한 Ralph agentic loop 설정도 `scripts/ralph/` 아래에 포함되어 있습니다.
