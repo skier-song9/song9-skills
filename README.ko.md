@@ -93,8 +93,8 @@ cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 
 이 저장소에는 Codex 사용을 기준으로 조정한 Ralph agentic loop 설정도 `scripts/ralph/` 아래에 포함되어 있습니다.
 
-- 원본 저장소: https://github.com/snarktank/ralph.git
-- Codex tool이 추가된 기반 fork: https://github.com/bsgustavo/ralph_protocol.git
+- 원본 저장소: [snarktank/ralph.git](https://github.com/snarktank/ralph.git)
+- Codex tool이 추가된 기반 fork: [bsgustavo/ralph_protocol.git](https://github.com/bsgustavo/ralph_protocol.git)
 - 이 저장소에는 그 fork 위에 소규모 권한 관련 수정이 추가로 반영되어 있습니다.
 
 기본 Codex 실행:
@@ -109,4 +109,4 @@ cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 RALPH_CODEX_SAFE_MODE=1 ./scripts/ralph/ralph.sh --tool codex [max_iterations]
 ```
 
-Ralph의 자세한 워크플로, 규칙, 사용 메모는 다음 Notion 페이지를 참고하세요: https://skier-song9.notion.site/Ralph-333c8d3f60f580ec9098cb284f3cf096?source=copy_link
+Ralph의 자세한 워크플로, 규칙, 사용 메모는 다음 Notion 페이지를 참고하세요: [notion/Ralph](https://skier-song9.notion.site/Ralph-333c8d3f60f580ec9098cb284f3cf096?source=copy_link)

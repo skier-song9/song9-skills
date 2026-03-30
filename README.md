@@ -93,8 +93,8 @@ This repository supports Codex, Claude Code, and Gemini CLI, but the skills in `
 
 This repo also includes a Ralph agentic loop setup under `scripts/ralph/`, adapted for Codex usage.
 
-- Original repository: https://github.com/snarktank/ralph.git
-- Codex-enabled fork used as the base: https://github.com/bsgustavo/ralph_protocol.git
+- Original repository: [snarktank/ralph.git](https://github.com/snarktank/ralph.git)
+- Codex-enabled fork used as the base: [bsgustavo/ralph_protocol.git](https://github.com/bsgustavo/ralph_protocol.git)
 - This repo carries a small local permission tweak on top of that fork.
 
 Default Codex run:
@@ -109,4 +109,4 @@ By default, this wrapper runs Codex with `--dangerously-bypass-approvals-and-san
 RALPH_CODEX_SAFE_MODE=1 ./scripts/ralph/ralph.sh --tool codex [max_iterations]
 ```
 
-For detailed Ralph workflow notes, conventions, and usage guidance, see the Notion page: https://skier-song9.notion.site/Ralph-333c8d3f60f580ec9098cb284f3cf096?source=copy_link
+For detailed Ralph workflow notes, conventions, and usage guidance, see the Notion page: [notion/Ralph](https://skier-song9.notion.site/Ralph-333c8d3f60f580ec9098cb284f3cf096?source=copy_link) ⭐
