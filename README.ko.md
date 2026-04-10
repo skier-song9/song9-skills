@@ -84,7 +84,7 @@ cp -R song9-skills/skills/* ~/.gemini/extensions/song9-skills/skills/
 | 스킬 | 목적 | `short_description` |
 | --- | --- | --- |
 | `notion-mcp-page-authoring` | 워크스페이스별 페이지 규칙과 포맷을 지키면서 Notion 페이지를 생성하고 수정합니다. | `Create and update Notion pages with rules` |
-| `notion-paper-page-authoring` | 기존 페이지 구조와 워크스페이스 규칙을 유지하면서 arXiv 논문 내용을 Notion 페이지에 정리합니다. | `Write arXiv paper notes into a Notion page` |
+| `notion-paper-page-authoring` | 기존 페이지 구조와 워크스페이스 규칙을 유지하면서 arXiv HTML 또는 PDF 논문 내용을 Notion 페이지에 정리합니다. | `Write arXiv paper notes into a Notion page` |
 | `prd` | 구현을 시작하지 않고 새로운 기능용 PRD를 작성합니다. | `Generate a Product Requirements Document (PRD) for a new feature.` |
 | `ralph` | 기존 PRD를 Ralph 실행용 `scripts/ralph/prd.json` 형식으로 변환합니다. | `Convert PRDs to prd.json format for the Ralph autonomous agent system.` |
 

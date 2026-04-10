@@ -15,5 +15,5 @@ __pycache__/
 build/
 dist/
 tmp/
+.omx/
 *.log
-

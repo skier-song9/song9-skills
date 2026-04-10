@@ -1,18 +1,18 @@
 ---
 name: notion-paper-page-authoring
-description: Update an existing Notion page with structured notes from an arXiv paper while preserving workspace-specific page rules. Use when Codex is asked to organize a paper into Notion from an arXiv URL and a Notion page URL, especially for requests such as "논문 정리해서 노션에 작성", "CRAG 논문 노션에 정리", "attention is all you need 논문 노션 정리", or "https://arxiv.org/abs/... 논문 노션 정리".
+description: Update an existing Notion page with structured notes from an arXiv paper while preserving workspace-specific page rules. Use when Codex is asked to organize a paper into Notion from an arXiv HTML URL or PDF URL and a Notion page URL, especially for requests such as "논문 정리해서 노션에 작성", "CRAG 논문 노션에 정리", "attention is all you need 논문 노션 정리", or "https://arxiv.org/abs/... 논문 노션 정리".
 ---
 
 # Notion Paper Page Authoring
 
 ## Overview
 
-Use this skill to read an arXiv paper, extract paper content from its HTML page, and fill an existing Notion page without changing the page title or rewriting unrelated content. Treat `notion-mcp-page-authoring` as the base skill for all Notion formatting and editing rules, then layer paper-specific summarization rules on top.
+Use this skill to read an arXiv paper, extract paper content from its HTML page or PDF, and fill an existing Notion page without changing the page title or rewriting unrelated content. Treat `notion-mcp-page-authoring` as the base skill for all Notion formatting and editing rules, then layer paper-specific summarization rules on top.
 
 ## Required Inputs
 
 Require both inputs before doing any paper work:
-- arXiv URL
+- arXiv URL (HTML or PDF)
 - Notion page URL
 
 If either input is missing, ask for it directly and stop. Do not guess the Notion target page. Do not proceed with only a paper title.
@@ -32,9 +32,9 @@ Use skill-relative paths for bundled resources and sibling skills. Do not embed 
 ## Workflow
 
 1. Confirm the user provided both the arXiv URL and the Notion page URL.
-2. Normalize the arXiv source.
+2. Determine whether the arXiv URL points to HTML or PDF.
 3. Fetch the existing Notion page and understand its structure, sections, and table of contents.
-4. Read the paper content from arXiv HTML.
+4. Read the paper content from arXiv HTML or arXiv PDF, depending on the source.
 5. Read `references/paper-summary-rules.md`.
 6. Fill only missing or empty paper-summary sections in the existing page.
 7. Preserve the title and all unrelated existing content.
@@ -42,11 +42,16 @@ Use skill-relative paths for bundled resources and sibling skills. Do not embed 
 
 ## Normalize The arXiv Source
 
-Prefer an arXiv HTML URL.
+Prefer an arXiv HTML URL when the user already has one, but accept an arXiv PDF URL directly.
 
 If the user gives an arXiv `abs` URL:
 - use web search to find the corresponding arXiv HTML page
 - prefer the official `arxiv.org/html/...` result
+
+If the user gives an arXiv PDF URL:
+- open the PDF directly with `web.open`
+- read the paper content from the text that Codex exposes in the PDF view
+- do not require an HTML URL or an external OCR/library path
 
 If the user gives a non-arXiv paper URL:
 - use web search only if it is necessary to find the official arXiv HTML page
@@ -56,13 +61,20 @@ If no arXiv HTML page exists or the HTML page lacks enough body content:
 - continue with abstract-only output
 - clearly limit the summary to what was available from the source
 
-## Read The Paper HTML
+## Read The Paper Source
 
-Create a dedicated temporary directory, for example with `mktemp -d`, before downloading the paper HTML.
-Download the arXiv HTML into that temporary directory with `wget`.
-If `wget` fails, retry with `curl`.
-Read the downloaded HTML file locally instead of relying on partial browser snippets when possible.
-After the summary is written or the task aborts, remove every temporary file and the temporary directory created during this step.
+For arXiv HTML sources:
+- create a dedicated temporary directory, for example with `mktemp -d`, before downloading the paper HTML
+- download the arXiv HTML into that temporary directory with `wget`
+- if `wget` fails, retry with `curl`
+- read the downloaded HTML file locally instead of relying on partial browser snippets when possible
+
+For arXiv PDF sources:
+- open the PDF directly with `web.open`
+- use the text that Codex exposes in the PDF view as the source text
+- do not introduce external OCR or PDF parsing dependencies
+
+After the summary is written or the task aborts, remove every temporary file and the temporary directory created during the HTML download path.
 
 Use web search only when needed for:
 - finding the HTML URL from an `abs` URL

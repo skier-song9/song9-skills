@@ -84,7 +84,7 @@ This repository supports Codex, Claude Code, and Gemini CLI, but the skills in `
 | Skill | Purpose | `short_description` |
 | --- | --- | --- |
 | `notion-mcp-page-authoring` | Create and update Notion pages while following workspace-specific page rules and formatting conventions. | `Create and update Notion pages with rules` |
-| `notion-paper-page-authoring` | Fill an existing Notion page with structured notes from an arXiv paper while preserving the page structure and workspace rules. | `Write arXiv paper notes into a Notion page` |
+| `notion-paper-page-authoring` | Fill an existing Notion page with structured notes from an arXiv HTML or PDF paper while preserving the page structure and workspace rules. | `Write arXiv paper notes into a Notion page` |
 | `prd` | Generate a Product Requirements Document for a feature without starting implementation. | `Generate a Product Requirements Document (PRD) for a new feature.` |
 | `ralph` | Convert an existing PRD into `scripts/ralph/prd.json` format for Ralph autonomous runs. | `Convert PRDs to prd.json format for the Ralph autonomous agent system.` |
 
