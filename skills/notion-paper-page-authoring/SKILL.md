@@ -111,6 +111,8 @@ Write the paper summary in Korean.
 Write as if the researcher is describing the work, not as if teaching or speaking to a reader.
 Follow the base Notion heading and block rules exactly.
 Preserve technical terms in English when needed.
+When the paper uses an abbreviation, expand it on first mention in the form `[abbreviation](full expression)` based on the paper's own context.
+If an abbreviation could mean multiple things across domains, use the expansion supported by that paper instead of a generic guess.
 Use diagrams, Mermaid, or pseudocode only when that representation is present in the paper body or appendix and can be reconstructed faithfully.
 
 ## Guardrails

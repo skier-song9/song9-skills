@@ -10,7 +10,20 @@ Use this file for the paper-specific summarization structure that is layered on 
 - Follow the instructions on the Notion page and fill the content into the relevant sections.
 - Write the paper summary as if you are the researcher, not as if you are explaining it to someone else.
 - Write the content in Korean.
+- When an abbreviation appears in the paper summary, expand it on first mention as `[abbreviation](full expression)`.
+- Resolve each abbreviation from the paper's own context, not from the most common expansion in some other field.
+- If the paper never makes the expansion recoverable, avoid inventing one. Either keep the surrounding sentence abbreviation-free or use only the form that is explicitly supported by the source.
 - If temporary downloads or extracted paper files were created while preparing the summary, remove them before finishing the task.
+
+## Abbreviation Examples
+
+Use the following style when the paper context supports these expansions:
+
+- `[MRC](Machine Reading Comprehension)` dataset setup is used to frame the multi-hop question answering task.
+- `[RAG](Retrieval-Augmented Generation)` pipeline combines retrieval and generation in the proposed system.
+- `[DPR](Dense Passage Retrieval)` retriever is used as the dense retrieval baseline.
+- `[NLI](Natural Language Inference)` supervision is used to evaluate whether the evidence supports the claim.
+- `[RLHF](Reinforcement Learning from Human Feedback)` stage is introduced to align the model with human preferences.
 
 ## Section Rules
 
